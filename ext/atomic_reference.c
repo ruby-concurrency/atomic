@@ -37,11 +37,17 @@ static VALUE ir_initialize(int argc, VALUE* argv, VALUE self) {
 }
 
 static VALUE ir_get(VALUE self) {
+#if HAVE_GCC_SYNC
+    __sync_synchronize();
+#endif
     return (VALUE) DATA_PTR(self);
 }
 
 static VALUE ir_set(VALUE self, VALUE new_value) {
     DATA_PTR(self) = (void *) new_value;
+#if HAVE_GCC_SYNC
+    __sync_synchronize();
+#endif
     return new_value;
 }
 

@@ -37,4 +37,11 @@ if compiler_is_gcc
   end
 end
 
+try_run(<<CODE,$CFLAGS) && ($defs << '-DHAVE_GCC_SYNC')
+int main() {
+  __sync_synchronize();
+  return 0;
+}
+CODE
+
 create_makefile(extension_name)
