@@ -41,6 +41,8 @@ static VALUE ir_get(VALUE self) {
     __sync_synchronize();
 #elif defined _MSC_VER
     MemoryBarrier();
+#elif __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ >= 1050
+    OSMemoryBarrier();
 #endif
     return (VALUE) DATA_PTR(self);
 }
@@ -51,6 +53,8 @@ static VALUE ir_set(VALUE self, VALUE new_value) {
     __sync_synchronize();
 #elif defined _MSC_VER
     MemoryBarrier();
+#elif __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ >= 1050
+    OSMemoryBarrier();
 #endif
     return new_value;
 }
