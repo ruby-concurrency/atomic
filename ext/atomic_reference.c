@@ -60,9 +60,8 @@ static VALUE ir_set(VALUE self, VALUE new_value) {
 }
 
 static VALUE ir_get_and_set(VALUE self, VALUE new_value) {
-    VALUE old_value;
-    old_value = (VALUE) DATA_PTR(self);
-    DATA_PTR(self) = (void *) new_value;
+    VALUE old_value = ir_get(self);
+    ir_set(self, new_value);
     return old_value;
 }
 
