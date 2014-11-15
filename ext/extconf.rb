@@ -37,11 +37,10 @@ if compiler_is_gcc
   end
 end
 
-try_run(<<CODE,$CFLAGS) && ($defs << '-DHAVE_GCC_CAS')
+try_run(<<CODE,$CFLAGS) && ($defs << '-DHAVE_GCC_SYNC')
 int main() {
-  int i = 1;
-  __sync_bool_compare_and_swap(&i, 1, 4);
-  return (i != 4);
+  __sync_synchronize();
+  return 0;
 }
 CODE
 
