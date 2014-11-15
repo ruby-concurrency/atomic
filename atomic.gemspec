@@ -4,13 +4,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{atomic}
-  s.version = "1.1.16"
+  s.version = "1.1.99"
   s.authors = ["Charles Oliver Nutter", "MenTaLguY", "Sokolov Yura"]
   s.date = Time.now.strftime('%Y-%m-%d')
   s.summary = "An atomic reference implementation for JRuby, Rubinius, and MRI"
   s.description = s.summary
   s.email = ["headius@headius.com", "mental@rydia.net", "funny.falcon@gmail.com"]
-  s.homepage = "http://github.com/headius/ruby-atomic"
+  s.homepage = "http://github.com/ruby-concurrency/ruby-atomic"
   s.require_paths = ["lib"]
   s.licenses = ["Apache-2.0"]
   s.test_files = Dir["test/test*.rb"]
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
     s.extensions = 'ext/extconf.rb'
   end
   s.files += `git ls-files`.lines.map(&:chomp)
+  s.post_install_message = 'This gem has been deprecated in lieu of Concurrent Ruby (http://concurrent-ruby.com).'
 end
