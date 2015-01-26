@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
     s.extensions = 'ext/extconf.rb'
   end
   s.files += `git ls-files`.lines.map(&:chomp)
-  s.post_install_message = 'This gem has been deprecated in lieu of Concurrent Ruby (http://concurrent-ruby.com).'
+  s.post_install_message = 'This gem has been deprecated and merged into Concurrent Ruby (http://concurrent-ruby.com).'
 end
