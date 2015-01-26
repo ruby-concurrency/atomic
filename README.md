@@ -7,7 +7,7 @@ An atomic reference implementation for JRuby, Rubinius, and MRI.
 # Deprecated!
 
 *This gem has been deprecated in lieu of [Concurrent Ruby](http://www.concurrent-ruby.com).
-This gem will be retained in GitHUb and Rubygems.org indefinitely but no new development
+This gem will be retained in GitHub and Rubygems.org indefinitely but no new development
 will occur, including updates to support new versions of Ruby, JRuby, and Java. All users
 of this gem are encouraged to update their projects to use `concurrent-ruby` instead.*
 
